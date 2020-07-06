@@ -25,17 +25,26 @@ const Formulario = () => {
     // Consultar las APIs
     const buscarInformacion = e => {
         e.preventDefault();
-        return;
 
         // Validacion
         if(artista.trim()==='' || cancion.trim()==='') {
-
+            guardarError(true);
+            return;
         }
+        guardarError(false);
+
+        // Pasar al componente principal
+
     }
     
 
     return ( 
         <div className="bg-info">
+            {
+            error 
+                ? <p className="alert alert-danger text-center p-2">Todos los campos son obligatorios</p>
+                : null
+            }
             <div className="container">
                 <div className="row">
                     <form
