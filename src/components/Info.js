@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Info = ({info}) => {
     if(Object.keys(info).length === 0) return null;
@@ -31,4 +32,8 @@ const Info = ({info}) => {
      );
 }
  
+Info.propTypes = {
+    info: PropTypes.object.isRequired
+}
+
 export default Info;
